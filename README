@@ -1,0 +1,14 @@
+Packages:
+- sway
+- swayidle
+- swaylock
+
+- bemenu (program launcher)
+- imv (image viewer)
+- zathura (pdf)
+- slurp + grim (screenshot utility)
+- slurp (scrot)
+- wl-clipboard (xclip)
+
+- xdg-utils (xdg-open)
+- xdg-user-dir

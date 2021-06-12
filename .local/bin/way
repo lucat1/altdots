@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# start sway on login
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  # move into the home directory as this script is run by nushell inside of
+  # $XDG_CONFIG_DIR/nu
+  cd 
+
+  mkdir -p /tmp/wayland
+  XDG_RUNTIME_DIR=/tmp/wayland sway
+fi

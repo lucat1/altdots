@@ -1,0 +1,9 @@
+#!/bin/sh
+
+dir="$(xdg-user-dir PICTURES)/$(date +%m-%d-%y)"
+
+if [ ! -d "$dir" ]; then
+  mkdir -p $dir
+fi
+
+grim -g "$(slurp)" "$dir/$(date +%m-%d-%y--%H-%M-%S.png)"
