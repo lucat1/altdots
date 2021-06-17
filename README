@@ -9,6 +9,8 @@ Packages:
 - slurp + grim (screenshot utility)
 - slurp (scrot)
 - wl-clipboard (xclip)
+- amixer
+- brightnessctl
 
 - xdg-utils (xdg-open)
 - xdg-user-dir
