@@ -14,3 +14,8 @@ Packages:
 
 - xdg-utils (xdg-open)
 - xdg-user-dir
+
+- nushell
+- nvim
+- tmux
+- ripgrep

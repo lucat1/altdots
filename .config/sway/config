@@ -31,11 +31,12 @@ set $cursor_size 32
 
 seat seat0 xcursor_theme $cursor $cursor_size
 
-exec swaybg -c "$bg" -i $wallpaper -m fill
+set $background_mode fill
+exec swaybg -c "$bg" -i $wallpaper -m $background_mode
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-set $lock swaylock -f -c "$bg" -i $wallpaper -s center
+set $lock swaylock -f -c "$bg" -i $wallpaper -s $background_mode
 exec swayidle -w \
   timeout 600 '$lock' \
   timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -131,8 +132,8 @@ bindsym XF86AudioMute         exec amixer set Master toggle
 bindsym XF86AudioLowerVolume  exec amixer set Master 2%-
 bindsym XF86AudioRaiseVolume  exec amixer set Master 2%+
 bindsym XF86AudioMicMute      exec amixer set Capture toggle
-bindsym XF86MonBrightnessUp   exec brightnessctl set 2%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
+bindsym XF86MonBrightnessUp   exec brightnessctl set 20+
+bindsym XF86MonBrightnessDown exec brightnessctl set 20-
 
 bar {
     position bottom
