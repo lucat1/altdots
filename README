@@ -2,6 +2,7 @@ Packages:
 - sway
 - swayidle
 - swaylock
+- waybar
 
 - bemenu (program launcher)
 - imv (image viewer)
@@ -9,7 +10,7 @@ Packages:
 - slurp + grim (screenshot utility)
 - slurp (scrot)
 - wl-clipboard (xclip)
-- amixer
+- pulseaudio
 - brightnessctl
 
 - xdg-utils (xdg-open)
@@ -19,3 +20,4 @@ Packages:
 - nvim
 - tmux
 - ripgrep
+- pavucontrol

@@ -1,0 +1,42 @@
+{
+  "position": "bottom",
+  "height": 22,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": [],
+  "modules-right": ["network", "backlight", "pulseaudio", "battery","clock", "tray"],
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "network": {
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "睊",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "backlight": {
+    "format": " {percent}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "ﱝ",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 40,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  }
+}
