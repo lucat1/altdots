@@ -21,7 +21,7 @@ exec_always kanshi
 
 # styling
 font pango:$font
-default_border pixel 1
+default_border pixel 0
 # class                 border  bgcolor text    indicator   child_border
 client.focused		$green  $bg     $fg     $fg         $green
 # TODO: revisit when sway has a fix. We ought to keep all g-settings in here
