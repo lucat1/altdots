@@ -19,14 +19,14 @@ window#waybar {
   margin: 0 6px;
 }
 
-#workspaces button.focused, #battery.charging {
+#workspaces button.focused, #battery.charging, #battery.plugged {
   color: #282828;
   background: #98971a;
 }
 
 #mode {
   color: #282828;
-  background: #d3869b;
+  background: #689d6a;
 }
 
 @keyframes blink {
