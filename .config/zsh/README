@@ -1,0 +1,5 @@
+zprezto is installed inside {$XDG_CONFIG_HOME:$HOME/.config}/zsh/.zprezto and
+these files are linked from zprezto. Only the .zshrc, .zshenv, and .zpreztorc 
+are modified to suit my needs.
+
+follow zprezto installation procedure to get up and running.
