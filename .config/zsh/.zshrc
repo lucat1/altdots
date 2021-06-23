@@ -16,8 +16,6 @@ fi
 # aliases
 alias ls=exa
 alias ll="exa -al"
-alias gpg=gpg2 # make gpg work
-alias sxiv='imv'
 alias vi="nvim"
 
 # git alias to manage dotfiles

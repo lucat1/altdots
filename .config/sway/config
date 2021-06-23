@@ -56,7 +56,7 @@ input type:keyboard {
 }
 
 # launching(sway)
-set $mode_launcher Launch: [f]irefox [t]mux
+set $mode_launcher Launch: [f]irefox [z]athura [i]mv
 bindsym $mod+Return exec $term
 # screenshot binds
 bindsym $mod+Alt+1 exec scr
@@ -67,11 +67,12 @@ bindsym $mod+Shift+space exec $menu
 bindsym $mod+w kill
 
 mode "$mode_launcher" {
-    bindsym f exec firefox-wayland; mode "default"
-    bindsym t exec alacritty -e tmux; mode "default"
+  bindsym f exec firefox-wayland; mode "default"
+  bindsym z exec zathura; mode "default"
+  bindsym i exec imv; mode "default"
 
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
 }
 
 # floating drag modifier
@@ -124,15 +125,15 @@ bindsym $mod+minus scratchpad show
 
 bindsym $mod+r mode "resize"
 mode "resize" {
-    # resize
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
-    bindsym $right resize grow width 20px
+  # resize
+  bindsym $left resize shrink width 20px
+  bindsym $down resize grow height 20px
+  bindsym $up resize shrink height 20px
+  bindsym $right resize grow width 20px
 
-    # exit
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  # exit
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # media keys binds
