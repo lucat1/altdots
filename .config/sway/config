@@ -11,13 +11,10 @@ set $up k
 set $right l
 
 # terminal and application launcher
-set $term alacritty
+set $term footclient
 set $menu BEMENU_BACKEND=wayland bemenu-run --fn "$font" --tb "$green" --hb "$red" \
   --tf "$bg" --hf "$bg" --nb "$bg" --fb "$bg" --ff "$fg" -p run -b --no-exec \
   | xargs swaymsg exec --
-
-# auto monitor configuraiton
-exec_always kanshi
 
 # styling
 font pango:$font
@@ -145,5 +142,10 @@ bindsym XF86MonBrightnessUp   exec brightnessctl set 20+
 bindsym XF86MonBrightnessDown exec brightnessctl set 20-
 
 bar {
-    swaybar_command waybar
+  swaybar_command waybar
 }
+
+# various daemons
+exec_always kanshi # auto monitor config
+exec_always pulseaudio
+exec_always foot --server

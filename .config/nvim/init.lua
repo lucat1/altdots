@@ -15,9 +15,9 @@ paq 'neovim/nvim-lspconfig'                                                    -
 paq 'nvim-lua/completion-nvim'                                                 -- autocomplete from the lsp
 paq 'terrortylor/nvim-comment'                                                 -- comment code blocks with a shortcut
 paq 'nvim-lua/popup.nvim'                                                      -- popup utility for lua plugins
-paq 'nvim-lua/plenary.nvim'                                                    -- various nvim utilities for telescope & staline
+paq 'nvim-lua/plenary.nvim'                                                    -- various nvim utilities for telescope
 paq 'nvim-telescope/telescope.nvim'                                            -- fuzzy finder and much more
-paq 'tamton-aquib/staline.nvim'                                                -- lightweight statusline written in 100LOC of lua 
+paq 'nvim-treesitter/nvim-treesitter'                                          -- modern syntax hilighting
 
 opt('o', 'swapfile', false)                                                    -- do not use swap files
 opt('o', 'backup', false)                                                      -- do not use backups
@@ -56,4 +56,3 @@ map('n', '<leader>p', "<CMD>lua require('telescope.builtin').find_files()<CR>")-
 map('n', '<leader>f', "<CMD>lua require('telescope.builtin').live_grep()<CR>") -- fuzzy file search
 
 require'lsp'
-require'line'
