@@ -58,6 +58,8 @@ input type:keyboard {
 # launching(sway)
 set $mode_launcher Launch: [f]irefox [t]mux
 bindsym $mod+Return exec $term
+# screenshot binds
+bindsym $mod+Alt+1 exec scr
 bindsym $mod+space mode "$mode_launcher"
 # launching(dmenu)
 bindsym $mod+Shift+space exec $menu
@@ -147,5 +149,6 @@ bar {
 
 # various daemons
 exec_always kanshi # auto monitor config
-exec_always pulseaudio
-exec_always foot --server
+exec pulseaudio
+exec mako
+exec foot --server

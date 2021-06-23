@@ -4,6 +4,7 @@ Packages:
 - swaylock
 - waybar
 
+- foot (terminal emulator)
 - bemenu (program launcher)
 - imv (image viewer)
 - zathura (pdf)
@@ -16,8 +17,10 @@ Packages:
 - xdg-utils (xdg-open)
 - xdg-user-dir
 
-- nushell
+- zsh + prezto
 - nvim
-- tmux
 - ripgrep
-- pavucontrol
+
+- dbus (ikr)
+- pulseaudio + pavucontrol
+- mako + libnotify
