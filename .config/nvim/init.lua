@@ -49,7 +49,9 @@ opt('b', 'smartindent', true)                                                  -
 opt('o', 'termguicolors', true)                                                -- enable true colors in modern terminals
 opt('o', 'background', 'dark')                                                 -- set whatever theme we have to dark
 cmd 'colorscheme gruvbox8'                                                     -- set the colorscheme to gruvbox ofc
-vim.g.gruvbox_transp_bg=1
+vim.g.gruvbox_transp_bg = 1
+
+vim.opt.completeopt = 'menuone,noinsert,noselect'
 
 vim.g.mapleader = ' '                                                          -- leader key for mappings
 map('n', '<leader>p', "<CMD>lua require('telescope.builtin').find_files()<CR>")-- fuzzy file finder
