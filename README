@@ -9,10 +9,12 @@ Packages:
 - imv (image viewer)
 - zathura (pdf)
 - slurp + grim (screenshot utility)
-- slurp (scrot)
+- wf-recorder + grim (screen recording utility)
 - wl-clipboard (xclip)
 - pulseaudio
 - brightnessctl
+- fonts-roboto-ttf (ui font)
+- noto-fonts-emoji
 
 - xdg-utils (xdg-open)
 - xdg-user-dir
