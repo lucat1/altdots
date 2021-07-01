@@ -15,7 +15,7 @@ local on_attach = function(client, bufnr)
   bmap('n', 'K',         '<CMD>lua vim.lsp.buf.hover()<CR>')                   -- show hover data      with lsp
 end
 
-local servers = { 'clangd', 'gopls', 'rls' }
+local servers = { 'clangd', 'gopls', 'jdtls' }
 for _, srv in ipairs(servers) do
   lspcfg[srv].setup{ on_attach = on_attach }
 end

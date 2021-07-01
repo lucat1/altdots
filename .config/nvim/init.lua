@@ -19,6 +19,9 @@ paq 'nvim-lua/plenary.nvim'                                                    -
 paq 'nvim-telescope/telescope.nvim'                                            -- fuzzy finder and much more
 paq 'nvim-treesitter/nvim-treesitter'                                          -- modern syntax hilighting
 
+paq 'lervag/vimtex'                                                            -- *Tex writing utility
+paq 'folke/zen-mode.nvim'                                                      -- distraction-free writing
+
 opt('o', 'swapfile', false)                                                    -- do not use swap files
 opt('o', 'backup', false)                                                      -- do not use backups
 opt('o', 'writebackup', false)                                                 -- do not write backups
@@ -57,4 +60,9 @@ vim.g.mapleader = ' '                                                          -
 map('n', '<leader>p', "<CMD>lua require('telescope.builtin').find_files()<CR>")-- fuzzy file finder
 map('n', '<leader>f', "<CMD>lua require('telescope.builtin').live_grep()<CR>") -- fuzzy file search
 
+map('n', '<leader>z', "<CMD>ZenMode<CR>")                                      -- zen mode
+map('n', '<leader>ll', "<CMD>VimtexCompile<CR>")                               -- vimtex compile toggle
+map('n', '<leader>lc', "<CMD>VimtexClean<CR>")                                 -- vimtex compile clean
+
 require'lsp'
+require('nvim_comment').setup()
