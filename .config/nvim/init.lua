@@ -13,6 +13,7 @@ paq {'savq/paq-nvim', opt=true}                                                -
 paq 'lifepillar/vim-gruvbox8'                                                  -- gruvbox colorscheme (lighter weight plugin)
 paq 'neovim/nvim-lspconfig'                                                    -- nvim builtin lsp configurations
 paq 'nvim-lua/completion-nvim'                                                 -- autocomplete from the lsp
+paq 'ray-x/lsp_signature.nvim'
 paq 'terrortylor/nvim-comment'                                                 -- comment code blocks with a shortcut
 paq 'nvim-lua/popup.nvim'                                                      -- popup utility for lua plugins
 paq 'nvim-lua/plenary.nvim'                                                    -- various nvim utilities for telescope

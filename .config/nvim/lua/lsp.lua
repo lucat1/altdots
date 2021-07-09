@@ -1,8 +1,10 @@
 local lspcfg = require('lspconfig')                                            -- lsp package for configuration
 local completion = require('completion')                                       -- autocopmlete utility for lsp
+local signature = require('lsp_signature')
 
 local on_attach = function(client, bufnr)
   completion.on_attach(client, bufnr)
+  signature.on_attach()
 
   local opts = { noremap=true, silent=true }
   local function bmap(a, b, c) vim.api.nvim_buf_set_keymap(bufnr, a, b, c, opts) end
