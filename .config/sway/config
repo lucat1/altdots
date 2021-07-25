@@ -150,7 +150,11 @@ bar {
 
 # various daemons
 exec_always kanshi # auto monitor config
-exec pipewire
-exec pipewire-pulse
 exec mako
 exec foot --server
+
+# get screen sharing (and great audio control)
+exec pipewire
+exec pipewire-pulse
+exec /usr/libexec/xdg-desktop-portal-wlr
+exec /usr/libexec/xdg-desktop-portal
