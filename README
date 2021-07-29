@@ -11,10 +11,14 @@ Packages:
 - slurp + grim (screenshot utility)
 - wf-recorder + grim (screen recording utility)
 - wl-clipboard (xclip)
-- pulseaudio
+- dbus (ikr)
+- pipewire and utils for alsa, pulse, bluetooth, screen recording, etc
+- pavucontrol
 - brightnessctl
 - fonts-roboto-ttf (ui font)
 - noto-fonts-emoji
+- jq (scripts)
+- mako + libnotify
 
 - xdg-utils (xdg-open)
 - xdg-user-dir
@@ -22,7 +26,3 @@ Packages:
 - zsh + prezto
 - nvim
 - ripgrep
-
-- dbus (ikr)
-- pulseaudio + pavucontrol
-- mako + libnotify

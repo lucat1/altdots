@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Copyright (C) 2020-2021 Bob Hepple <bob.hepple@gmail.com>
+# Copyright (C) 2021 Luca Tagliavini <fromzeroluke1@gmail.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or (at
+# your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+# http://bhepple.freeshell.org
+
+PROG=$( basename $0 )
+
+TEMP=$( getopt --options h --longoptions help -- "$@" ) || exit 1
+eval set -- "$TEMP"
+
+for i in "$@"; do
+    case "$i" in
+        -h|--help)
+            echo "$PROG <gui-program> [args]"
+            echo
+            {
+                echo "Hides the current terminal (or whatever called $PROG) in the scratchpad, runs the gui-program"
+                echo "with optional [args]. Once it exits, the current terminal is restored from scratchpad"
+            } | fmt
+            exit 0
+            ;;
+    esac
+done
+
+# a bit tricky but just a bit faster - start the gui-program ASAP and
+# in background, but rely on the fact that the terminal has not yet
+# lost focus!!
+shift
+"$@" &
+
+#set -x
+{
+    read TERMINAL_ID
+    read TERMINAL_TYPE
+    read TERMINAL_BORDER
+} < <( swaymsg -t get_tree | jq -r '..| select(.type?) | select(.focused==true) | .id, .type, .border' )
+
+FLOATING="enable"
+[[ "$TERMINAL_TYPE" == "floating_con" ]] || FLOATING="disable"
+
+swaymsg "move window to scratchpad"
+wait
+
+swaymsg "[con_id=$TERMINAL_ID] focus; floating $FLOATING; border $TERMINAL_BORDER"
