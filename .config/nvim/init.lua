@@ -13,8 +13,9 @@ paq {'savq/paq-nvim', opt=true}                                                -
 paq 'lifepillar/vim-gruvbox8'                                                  -- gruvbox colorscheme (lighter weight plugin)
 paq 'neovim/nvim-lspconfig'                                                    -- nvim builtin lsp configurations
 paq 'nvim-lua/completion-nvim'                                                 -- autocomplete from the lsp
-paq 'ray-x/lsp_signature.nvim'
+paq 'ray-x/lsp_signature.nvim'                                                 -- more autocomplete infos from lsp
 paq 'terrortylor/nvim-comment'                                                 -- comment code blocks with a shortcut
+paq 'famiu/feline.nvim'
 paq 'nvim-lua/popup.nvim'                                                      -- popup utility for lua plugins
 paq 'nvim-lua/plenary.nvim'                                                    -- various nvim utilities for telescope
 paq 'nvim-telescope/telescope.nvim'                                            -- fuzzy finder and much more
@@ -66,4 +67,5 @@ map('n', '<leader>ll', "<CMD>VimtexCompile<CR>")                               -
 map('n', '<leader>lc', "<CMD>VimtexClean<CR>")                                 -- vimtex compile clean
 
 require'lsp'
+require'line'
 require('nvim_comment').setup()
