@@ -13,6 +13,7 @@ Packages:
 - wl-clipboard (xclip)
 - dbus (ikr)
 - pipewire and utils for alsa, pulse, bluetooth, screen recording, etc
+- playerctl
 - pavucontrol
 - brightnessctl
 - fonts-roboto-ttf (ui font)

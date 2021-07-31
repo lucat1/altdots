@@ -21,11 +21,15 @@ font pango:$font
 default_border pixel 0
 # class                 border  bgcolor text    indicator   child_border
 client.focused		$green  $bg     $fg     $fg         $green
-# TODO: revisit when sway has a fix. We ought to keep all g-settings in here
-# and not duplicated across here and gtk-2.0/settings.ini
+
+set $gnome-schema org.gnome.desktop.interface
 set $cursor oreo_black_cursors
 set $cursor_size 32
-
+exec_always {
+  gsettings set $gnome-schema font-name "$font"
+  gsettings set $gnome-schema cursor-theme $cursor
+  gsettings set $gnome-schema cursor-size $cursor_size
+}
 seat seat0 xcursor_theme $cursor $cursor_size
 
 set $background_mode fill
@@ -67,7 +71,7 @@ bindsym $mod+Shift+space exec $menu
 bindsym $mod+w kill
 
 mode "$mode_launcher" {
-  bindsym f exec firefox-wayland; mode "default"
+  bindsym f exec firefox; mode "default"
   bindsym z exec zathura; mode "default"
   bindsym i exec imv; mode "default"
 
@@ -150,11 +154,6 @@ bar {
 
 # various daemons
 exec_always kanshi # auto monitor config
+exec_always import-gsettings
 exec mako
 exec foot --server
-
-# get screen sharing (and great audio control)
-exec pipewire
-exec pipewire-pulse
-exec /usr/libexec/xdg-desktop-portal-wlr
-exec /usr/libexec/xdg-desktop-portal

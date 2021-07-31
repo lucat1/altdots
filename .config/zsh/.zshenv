@@ -7,6 +7,14 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# firefox & wayland bullshit
+export MOZ_ENABLE_WAYLAND=1
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+
+# custom scripts
+export PATH="$PATH:$HOME/.local/bin"
+
 # java bullshit
 JDTS=$HOME/.local/java
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")

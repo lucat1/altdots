@@ -9,10 +9,7 @@ fi
 
 # start sway on login
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  mkdir -p /tmp/wayland
-  export MOZ_ENABLE_WAYLAND=1
-  XDG_RUNTIME_DIR=/tmp/wayland XDG_CURRENT_DESKTOP=sway XDG_SESSION_TYPE=wayland \
-    dbus-run-session sway
+  exec dbus-run-session sway
 fi
 
 # aliases
