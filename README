@@ -27,3 +27,6 @@ Packages:
 - zsh + prezto
 - nvim
 - ripgrep
+
+- ttf-roboto
+- ttf-scientifica
