@@ -154,6 +154,6 @@ bar {
 
 # various daemons
 exec_always kanshi # auto monitor config
-exec_always import-gsettings
 exec mako
 exec foot --server
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
