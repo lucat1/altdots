@@ -11,9 +11,10 @@ local g = vim.g                                                                -
 
 paq {'savq/paq-nvim', opt=true}                                                -- let the package manager manage itself
 paq 'lifepillar/vim-gruvbox8'                                                  -- gruvbox colorscheme (lighter weight plugin)
+paq 'svermeulen/vimpeccable'                                                   -- bind vi keys in lua
 paq 'neovim/nvim-lspconfig'                                                    -- nvim builtin lsp configurations
-paq 'nvim-lua/completion-nvim'                                                 -- autocomplete from the lsp
-paq 'ray-x/lsp_signature.nvim'                                                 -- more autocomplete infos from lsp
+paq 'dnvim-lua/completion-nvim'                                                -- autocomplete from the lsp
+paq 'glepnir/lspsaga.nvim'                                                     -- loads of tools for the lsp experience
 paq 'terrortylor/nvim-comment'                                                 -- comment code blocks with a shortcut
 paq 'famiu/feline.nvim'
 paq 'nvim-lua/popup.nvim'                                                      -- popup utility for lua plugins
@@ -21,9 +22,7 @@ paq 'nvim-lua/plenary.nvim'                                                    -
 paq 'nvim-telescope/telescope.nvim'                                            -- fuzzy finder and much more
 paq 'nvim-treesitter/nvim-treesitter'                                          -- modern syntax hilighting
 
-paq 'lervag/vimtex'                                                            -- *Tex writing utility
-paq 'folke/zen-mode.nvim'                                                      -- distraction-free writing
-
+paq 'lervag/vimtex'                                                            -- *Tex writing utility paq 'folke/zen-mode.nvim'                                                      -- distraction-free writing
 opt('o', 'swapfile', false)                                                    -- do not use swap files
 opt('o', 'backup', false)                                                      -- do not use backups
 opt('o', 'writebackup', false)                                                 -- do not write backups
@@ -38,6 +37,7 @@ opt('o', 'smartcase', true)                                                    -
 opt('w', 'wrap', false)                                                        -- do not wrap lines
 opt('w', 'number', true)                                                       -- add line numbers to the left gutter
 opt('w', 'relativenumber', true)                                               -- make line numbers relative
+opt('w', 'foldmethod', 'marker')                                               -- fold with {{{ and }}} markers
 opt('o', 'scrolloff', 5)                                                       -- leave n lines from the bottom while scrolling down
 opt('o', 'sidescrolloff', 10)                                                  -- leave n lines frm the right while scrolling right
 opt('w', 'colorcolumn', '80')                                                  -- show a column ruler at 80 chars
@@ -66,6 +66,18 @@ map('n', '<leader>z', "<CMD>ZenMode<CR>")                                      -
 map('n', '<leader>ll', "<CMD>VimtexCompile<CR>")                               -- vimtex compile toggle
 map('n', '<leader>lc', "<CMD>VimtexClean<CR>")                                 -- vimtex compile clean
 
+-- treesitter, future Luca improve please
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+
 require'lsp'
-require'line'
+require'feline'.setup()
 require('nvim_comment').setup()
