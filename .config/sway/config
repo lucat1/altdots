@@ -1,6 +1,6 @@
 # theming preferences
 include gruvbox
-set $font scientifica 18px
+set $font BlexMono Nerd Font 16px
 set $wallpaper ~/Pictures/wallpaper.jpg
 
 set $mod Mod4
@@ -12,10 +12,7 @@ set $right l
 
 # terminal and application launcher
 set $term footclient
-set $menu BEMENU_BACKEND=wayland bemenu-run --fn "$font" --tb "$green" --hb "$red" \
-  --tf "$bg" --hf "$bg" --nb "$bg" --fb "$bg" --ff "$fg" -p run -b --no-exec \
-  | xargs swaymsg exec --
-
+set $menu fuzzel
 # styling
 font pango:$font
 default_border pixel 0
@@ -60,7 +57,7 @@ input type:keyboard {
 }
 
 # launching(sway)
-set $mode_launcher Launch: [f]irefox [z]athura [i]mv
+set $mode_launcher Launch: [c]hromium [z]athura [i]mv
 bindsym $mod+Return exec $term
 # screenshot binds
 bindsym $mod+Alt+1 exec scr
@@ -71,7 +68,7 @@ bindsym $mod+Shift+space exec $menu
 bindsym $mod+w kill
 
 mode "$mode_launcher" {
-  bindsym f exec firefox; mode "default"
+  bindsym c exec chromium; mode "default"
   bindsym z exec zathura; mode "default"
   bindsym i exec imv; mode "default"
 
