@@ -16,9 +16,5 @@ export XDG_SESSION_TYPE=wayland
 export PATH="$PATH:$HOME/.local/bin"
 
 # java bullshit
-JDTS=$HOME/.local/java
-export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
-export JAR=$JDTS/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar
-export JDTLS_CONFIG=$JDTS/config_linux
-export WORKSPACE=$JDTS/workspace
-export GRADLE_HOME=$JDTS/gradle
+export JDTLS_HOME=$HOME/.local/java
+export WORKSPACE=$JDTLS_HOME/workspace
