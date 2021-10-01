@@ -14,6 +14,8 @@ export XDG_SESSION_TYPE=wayland
 
 # custom scripts
 export PATH="$PATH:$HOME/.local/bin"
+# go binaries
+export PATH="$PATH:$HOME/go/bin"
 
 # java bullshit
 export JDTLS_HOME=$HOME/.local/java

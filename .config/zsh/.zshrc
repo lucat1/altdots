@@ -7,9 +7,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# start sway on login
+# start river on login
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec sway
+  # exec river
 fi
 
 # aliases
