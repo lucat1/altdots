@@ -13,7 +13,7 @@ paq {'savq/paq-nvim', opt=true}                                                -
 paq 'lifepillar/vim-gruvbox8'                                                  -- gruvbox colorscheme (lighter weight plugin)
 paq 'svermeulen/vimpeccable'                                                   -- bind vi keys in lua
 paq 'neovim/nvim-lspconfig'                                                    -- nvim builtin lsp configurations
-paq 'dnvim-lua/completion-nvim'                                                -- autocomplete from the lsp
+paq 'nvim-lua/completion-nvim'                                                -- autocomplete from the lsp
 paq 'glepnir/lspsaga.nvim'                                                     -- loads of tools for the lsp experience
 paq 'terrortylor/nvim-comment'                                                 -- comment code blocks with a shortcut
 paq 'famiu/feline.nvim'
@@ -76,6 +76,9 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  }
 }
 
 require'lsp'
