@@ -20,7 +20,7 @@ default_border pixel 0
 client.focused		$green  $bg     $fg     $fg         $green
 
 set $gnome-schema org.gnome.desktop.interface
-set $cursor oreo_black_cursors
+set $cursor oreo_white_cursors
 set $cursor_size 32
 exec_always {
   gsettings set $gnome-schema font-name "$font"
