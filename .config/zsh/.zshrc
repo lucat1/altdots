@@ -17,6 +17,7 @@ fi
 alias ls=exa
 alias ll="exa -al"
 alias vi="nvim"
+alias ssh="TERM=xterm-256color ssh"
 
 # git alias to manage dotfiles
 # see: https://www.atlassian.com/git/tutorials/dotfiles
