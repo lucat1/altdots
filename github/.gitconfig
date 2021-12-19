@@ -4,4 +4,4 @@
 	signingkey = 3133FC373370010F 
 
 [commit]
-  gpgsign = false # true
+  gpgsign = true
