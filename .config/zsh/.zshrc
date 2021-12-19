@@ -14,8 +14,8 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 fi
 
 # aliases
-alias ls=exa
-alias ll="exa -al"
+alias ls="exa --header --git"
+alias ll="exa -a --long --header --git"
 alias vi="nvim"
 alias ssh="TERM=xterm-256color ssh"
 
